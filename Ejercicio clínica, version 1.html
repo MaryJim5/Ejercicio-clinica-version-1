@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clínica Médica</title>
+  <!-- Cargamos Tailwind CSS vía CDN para aplicar estilos utilitarios -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Ionicons CDN para íconos modernos y minimalistas -->
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <style>
+    /* Agregamos transiciones suaves a los detalles al abrir/cerrar */
+    details[open] summary ~ * {
+      animation: fadeIn 0.3s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-5px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+
+<body class="bg-gray-100 text-gray-800 font-sans">
+  <!-- Encabezado principal con logo y nombre de la clínica -->
+  <header class="bg-white shadow-md p-4 flex flex-col items-center text-center md:flex-row md:justify-between md:text-left">
+    <img src="https://github.com/Per-Arredondo/Clinica_medica/blob/main/logo%20ejemplo.png?raw=true" alt="Logo Clínica" class="h-16 mb-2 md:mb-0">
+    <h1 class="text-2xl font-bold text-blue-700 flex items-center gap-2">
+      <ion-icon name="medkit-outline"></ion-icon>
+      Clínica Médica
+    </h1>
+  </header>
+
+  <!-- Imagen de portada/presentación -->
+  <section class="w-full">
+    <img src="https://github.com/Per-Arredondo/Clinica_medica/blob/main/ChatGPT%20Image%202%20abr%202025,%2016%2004_57.png?raw=true" alt="Presentación" class="w-full max-h-[400px] object-cover">
+  </section>
+
+  <!-- Sección de información institucional -->
+  <section class="p-6 space-y-6">
+    <div>
+      <h2 class="text-xl font-semibold text-blue-700 mb-2 flex items-center gap-1">
+        <ion-icon name="people-circle-outline"></ion-icon>
+        ¿Quiénes somos?
+      </h2>
+      <p>Somos una clínica médica comprometida con el bienestar integral de nuestros pacientes, ofreciendo atención profesional con un enfoque humano.</p>
+    </div>
+    <div>
+      <h2 class="text-xl font-semibold text-blue-700 mb-2 flex items-center gap-1">
+        <ion-icon name="ribbon-outline"></ion-icon>
+        Misión
+      </h2>
+      <p>Brindar atención médica integral, accesible y de calidad.</p>
+    </div>
+    <div>
+      <h2 class="text-xl font-semibold text-blue-700 mb-2 flex items-center gap-1">
+        <ion-icon name="eye-outline"></ion-icon>
+        Visión
+      </h2>
+      <p>Ser una clínica referente por excelencia, trato humano y compromiso con la salud preventiva.</p>
+    </div>
+    <div>
+      <h2 class="text-xl font-semibold text-blue-700 mb-2 flex items-center gap-1">
+        <ion-icon name="heart-outline"></ion-icon>
+        Valores
+      </h2>
+      <ul class="list-disc list-inside">
+        <li>Ética profesional</li>
+        <li>Empatía</li>
+        <li>Diversidad</li>
+        <li>Honestidad</li>
+        <li>Responsabilidad</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Especialidades Médicas con efecto acordeón animado -->
+  <section class="p-6">
+    <h2 class="text-xl font-semibold text-blue-700 mb-4 flex items-center gap-1">
+      <ion-icon name="medkit-outline"></ion-icon>
+      Especialidades Médicas
+    </h2>
+    <div class="space-y-2">
+      <!-- Cada bloque <details> tendrá animación al abrir -->
+      <details class="bg-white p-4 rounded shadow transition-all duration-300">
+        <summary class="font-medium cursor-pointer flex items-center gap-2">
+          <ion-icon name="person-outline"></ion-icon>
+          Medicina General
+        </summary>
+        <p class="mt-2">Atención médica primaria y seguimiento general de la salud.</p>
+      </details>
+      <details class="bg-white p-4 rounded shadow transition-all duration-300">
+        <summary class="font-medium cursor-pointer flex items-center gap-2">
+          <ion-icon name="female-outline"></ion-icon>
+          Ginecología
+        </summary>
+        <p class="mt-2">Salud reproductiva, controles prenatales y ginecológicos.</p>
+      </details>
+      <details class="bg-white p-4 rounded shadow transition-all duration-300">
+        <summary class="font-medium cursor-pointer flex items-center gap-2">
+          <ion-icon name="water-outline"></ion-icon>
+          Urología
+        </summary>
+        <p class="mt-2">Diagnóstico y tratamiento del aparato urinario y reproductor masculino.</p>
+      </details>
+      <details class="bg-white p-4 rounded shadow transition-all duration-300">
+        <summary class="font-medium cursor-pointer flex items-center gap-2">
+          <ion-icon name="happy-outline"></ion-icon>
+          Pediatría
+        </summary>
+        <p class="mt-2">Atención médica especializada para niños y adolescentes.</p>
+      </details>
+      <details class="bg-white p-4 rounded shadow transition-all duration-300">
+        <summary class="font-medium cursor-pointer flex items-center gap-2">
+          <ion-icon name="heart-half-outline"></ion-icon>
+          Cardiología
+        </summary>
+        <p class="mt-2">Prevención y tratamiento de enfermedades del corazón.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- Formulario para agendar citas médicas -->
+  <section class="p-6 bg-white shadow-inner rounded-lg mx-4 my-8 max-w-3xl mx-auto">
+    <h2 class="text-xl font-semibold text-blue-700 mb-4 flex items-center gap-1">
+      <ion-icon name="calendar-outline"></ion-icon>
+      Agendar Cita
+    </h2>
+    <!-- IMPORTANTE: reemplazar el ID del formulario con el ID real de tu Google Form -->
+    <form action="https://docs.google.com/forms/d/e/YOUR_GOOGLE_FORM_ID/formResponse" method="POST" target="_blank" class="space-y-4">
+      <div>
+        <label class="block">Nombre completo</label>
+        <input name="entry.1234567890" type="text" required class="w-full border rounded p-2">
+      </div>
+      <div>
+        <label class="block">Teléfono</label>
+        <input name="entry.0987654321" type="tel" pattern="[0-9]{10}" required class="w-full border rounded p-2">
+      </div>
+      <div>
+        <label class="block">Correo electrónico</label>
+        <input name="entry.1111111111" type="email" required class="w-full border rounded p-2">
+      </div>
+      <div>
+        <label class="block">Sexo</label>
+        <select name="entry.2222222222" class="w-full border rounded p-2">
+          <option>Femenino</option>
+          <option>Masculino</option>
+          <option>Otro</option>
+        </select>
+      </div>
+      <div>
+        <label class="block">Especialidad</label>
+        <select name="entry.3333333333" class="w-full border rounded p-2">
+          <option>Medicina General</option>
+          <option>Ginecología</option>
+          <option>Urología</option>
+          <option>Pediatría</option>
+          <option>Cardiología</option>
+        </select>
+      </div>
+      <div>
+        <label class="block">Fecha</label>
+        <input name="entry.4444444444" type="date" required class="w-full border rounded p-2">
+      </div>
+      <div>
+        <label class="block">Hora</label>
+        <input name="entry.5555555555" type="time" required class="w-full border rounded p-2">
+      </div>
+      <div>
+        <label class="block">Comentarios</label>
+        <textarea name="entry.6666666666" class="w-full border rounded p-2"></textarea>
+      </div>
+      <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 flex items-center gap-1">
+        <ion-icon name="send-outline"></ion-icon>
+        Enviar
+      </button>
+    </form>
+  </section>
+
+  <!-- Pie de página -->
+  <footer class="text-center p-4 text-sm text-gray-500">
+    © 2025 Clínica Médica. Todos los derechos reservados.
+  </footer>
+</body>
+
+</html>
